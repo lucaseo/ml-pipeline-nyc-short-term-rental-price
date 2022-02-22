@@ -2,6 +2,8 @@
 
 ## Result
 
+_All materials are referenced from **Udacity Machine Learning DevOps Engineer Nanodegree Program**_
+
 - [Github Repository](https://github.com/lucaseo/ml-pipeline-nyc-short-term-rental-price)
 - [W&B](https://wandb.ai/lucaseo/nyc_airbnb/overview?workspace=user-lucaseo)
 
