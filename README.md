@@ -58,6 +58,13 @@ file provided in the root of the repository and activate it:
 > conda activate nyc_airbnb_dev
 ```
 
+how to remove conda environment
+
+```bash
+> conda deactivate
+> conda env remove --name nyc_airbnb_dev
+```
+
 ### Get API key for Weights and Biases
 Let's make sure we are logged in to Weights & Biases. Get your API key from W&B by going to 
 [https://wandb.ai/authorize](https://wandb.ai/authorize) and click on the + icon (copy to clipboard), 
