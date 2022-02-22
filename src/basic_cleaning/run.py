@@ -21,8 +21,8 @@ def clean_data(df: pd.DataFrame, min_price: float, max_price: float) -> pd.DataF
     df = df[(df['price'] >= min_price) & (df['price'] <= max_price)].copy() # you can also use pandas between
 
     # filter data: longitude, latitude
-    df = df[(df['longitude'] >= -74.25) & (df['longitude'] <= -73.50)].copy()
-    df = df[(df['latitude'] >= 40 / 5) & (df['longitude'] <= 41.2)].copy()
+    idx_ls = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx_ls].copy()
 
     # convert data
     df['last_review'] = pd.to_datetime(df['last_review'])
@@ -59,11 +59,6 @@ def go(args):
         artifact = wandb.Artifact(args.output_artifact, type=args.output_type, description=args.output_description)
         artifact.add_file(os.path.join(temp_dir, "clean_sample.csv"))
         run.log_artifact(artifact)
-
-
-    ######################
-    # YOUR CODE HERE     #
-    ######################
 
 
 if __name__ == "__main__":
